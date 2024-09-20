@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app_reacdjn import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('create/',views.BookListCreateView.as_view()),
+    path('del_upd/<int:pk>',views.BookDetailView.as_view())
 ]
